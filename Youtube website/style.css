@@ -1,0 +1,535 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: #5a5a5a;
+}
+
+img{
+    cursor: pointer;
+}
+
+/* header size setting */
+.flex-div{
+    display: flex;
+    align-items: center;
+}
+
+/* header alignement and small gaps between logoes */ 
+nav{
+    padding: 10px 2%;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: #ffff;
+    position: sticky;        /* Show the navigation logo */
+    top: 0;
+    z-index: 10;
+}
+
+/*  size of header layout right side only images and logoes are of same size */
+.nav-right img{
+       width: 25px;
+       margin-right: 25px;
+}
+
+/* increase the size of image and circle the image of person   */ 
+.nav-right .user-icon{
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 0;
+}
+
+/* decrease the size of logo of navigation (which is present in right side) */
+.nav-left .menu-icon{
+    width: 22px;
+    margin-right: 25px;
+}
+
+/* youtube logo size decreasing */
+.nav-left .logo{
+    width: 130px;
+}
+
+/* set the size of middle logos in header of webpage(search box, search icon, mic icon) */
+.nav-middle .mic-icon{
+    width: 16px;
+}
+
+/* search box size */
+.nav-middle .search-box{
+   border: 1px solid #ccc;
+   margin-right: 15px;
+   padding: 8px 12px;
+   border-radius: 25px;
+}
+
+/* search box design  ,    <input> is not a class it is a tag*/
+.nav-middle .search-box input{
+width: 400px;
+border: 0;
+outline: 0;
+background: transparent;
+}
+
+/* Search icon size (decreases) ,  <img> is a tag not a class in bellow*/
+.nav-middle .search-box img{
+    width: 15px;
+}
+
+
+
+/*  -------  Sidebar  ----------   */
+
+.sidebar{
+    background: #000;
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    padding-left: 2%;
+    padding-top: 80px;
+}
+
+.shortcut-links a img{
+    width: 20px;
+    margin-right: 20px;
+}
+
+.shortcut-links a{
+    display: flex;     /* (IMPORTANT)   It is used to make contents 2 or more rows is to one row (image and text in one row) */
+    align-items: center;
+    margin-bottom: 20px;
+    width: fit-content;
+    flex-wrap: wrap;
+}
+
+.shortcut-links a:first-child{
+    color: #ed3833;
+}
+
+/*  Height of the line between contents in nevigation drawer  */
+.sidebar hr{
+    border: 0;
+    height: 2px;
+    background: #ed3833;
+    width: 85%;
+}
+
+.subscribed-list h3{
+    font-size: 13px;
+    margin: 20px 0;
+    color: #e9d9d9;
+}
+
+/* alignment of the list of peoples*/
+.subscribed-list a{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: fit-content;
+    flex-wrap: wrap;
+}
+
+/*  circular size of images*/
+.subscribed-list a img{
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 20px;
+
+}
+
+/* This code used for navigation drawer*/
+.small-sidebar{           /* .small is sagested by visual studio*/
+    width: 5%;
+}
+/* Hide the text of navigation drawer the icon are visibal onlt the text will Hide (p)*/
+.small-sidebar a p{   
+    display: none;
+}
+
+/* Hide the text of navigation drawer*/
+.small-sidebar h3{
+    display: none;
+}
+
+/* decrease the length of the content in navbar*/
+.small-sidebar hr{
+    width: 50%;
+    margin-bottom: 25px;
+}
+
+
+/*-----------------  Main ---------------------*/
+
+.container{
+    background: #f5f2f2;
+    padding-left: 17%;    /* I check it if we put padding-left=17% it will also working ( This experiment to put (margin in plase of padding) is only to check) */
+    padding-right: 2%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.large-container{
+    padding-left: 7%;
+    
+}
+
+
+
+
+.banner{
+    width:100%;
+}
+
+.banner img{
+     width: 100%;
+     border-radius: 8px;
+}
+
+.list-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 30px;
+    margin-top: 15px;
+}
+
+/* class="thumbnail" it is use to decrease the size of image */
+.vid-list .thumbnail{
+    width: 100%;              /* decrease the size of image in proper way*/ 
+    border-radius: 5px;     /* make the corner round in images*/
+}
+
+.vid-list .flex-div{
+    align-items: flex-start;
+    margin-top: 7px;
+}
+
+/* make circular image in all videos*/
+.vid-list .flex-div img{
+width: 35px;
+margin-right: 10px;
+border-radius: 50%;
+}
+
+/* Text size all video discriptions*/
+.vid-info{
+    color: #2e2a2a;
+    font-size: 13px;
+}
+
+/* Text size all video discriptions in <a> */
+.vid-info a{
+    color: #000;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+/* Now to make website mobile friendaly*/
+@media (max-width: 900px){
+    .menu-icon{
+        display: none;          /*close the menu icon logo in mobile view */
+    }
+    .sidebar{
+        display: none;            /*close the side bar in mobile view */
+    }
+    .container, .large-container{
+        padding-left: 5%;           /* remove extra space on left side in mobile view */
+        padding-right: 5%;         /* remove extra space on left side in mobile view */
+    }
+    .nav-right img{
+        display: none;       /* remove all the images from right side*/
+    }
+ 
+    .nav-right .user-icon{
+        display: block;
+        width: 30px;
+    } 
+
+    .nav-middle .search-box input{
+        width: 100px;                            /* decrease the size of serch box*/
+    }
+
+     .nav-middle .mic-icon{
+         display: none;                         /* Remove the mic icon from mobile view*/    
+     }
+
+     .logo{
+         width: 90px;            /* decrease the size of youtube logo*/
+     }
+
+}
+
+
+
+
+
+
+
+
+/* Play video page (styling the new page when click to image)*/
+/* from now on word the styling was start from new html page (play-video.html) */
+
+.play-container{
+    padding-left: 2%;
+}
+                         
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.play-video{
+    flex-basis: 69%;
+}
+
+.right-sidebar{
+    flex-basis: 30%;
+}
+
+
+.play-video video{ 
+    width: 100%;
+}
+
+
+.side-video-list{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.side-video-list img{
+    width: 100%;                   /*list of videos in right side*/
+}
+
+.side-video-list .small-thumbnail{
+    flex-basis: 49%;
+}
+
+.side-video-list .vid-info{
+    flex-basis: 49%;
+}
+
+.play-video .tags a{
+    color: #0000ff;
+    font-size: 13px;
+}
+
+.play-video h3{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+/* for button size decrease and looking good icon (like, dislike, share, save)*/
+/* and text also there are two classes in on style body*/
+.play-video .play-video-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #5a5a5a;
+}
+
+/* for button size decrease and looking good icon (like, dislike, share, save)*/
+.play-video .play-video-info a img{
+    width: 20px;
+    margin-right: 8px;
+}
+
+/* image text alignment */
+.play-video .play-video-info a{
+    display: inline-flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+
+.play-video hr{
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 10px 0;
+}
+
+
+.publisher{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* The subscribe button move in right side*/
+.publisher div{
+    flex: 1;    
+    line-height: 18px;          
+}
+
+/* decrease the size of image*/
+.publisher img{             
+    width: 40px;      
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+
+.publisher div p{
+    columns: #000;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.publisher div span{
+    font-size: 13px;
+    color: #5a5a5a;
+}
+
+.publisher button{
+    background: red;
+    color: #fff;
+    padding: 8px 30px;
+    border-block: 0;
+    outline: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.vid-description{
+    padding-left: 55px;
+    margin: 15px 0;
+}
+
+
+.vid-description p{
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #5a5a5a;
+}
+
+.vid-description h4{
+    font-size: 14px;
+    color: #5a5a5a;
+    margin-top: 15px;
+}
+
+
+
+.add-comment{
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+
+
+.add-comment img{
+    width: 35px;
+    border-radius: 50%;         /* Size of the logo change to circular*/
+    margin-right: 15px;
+}
+
+/* comment text writing in comment line */
+.add-comment input{
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    padding-top: 10px;
+    background: transparent;
+}
+
+
+.old-comment{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.old-comment img{
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.old-comment h3{
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+
+.old-comment h3 span{
+    font-size: 12px;
+    columns: #5a5a5a;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+
+/* icon alignment and size decresing and alignment*/
+.old-comment .acomment-action{
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    font-size: 14px;
+
+}
+
+/* icon size decreasing and look goood*/
+.old-comment .acomment-action img{
+       border-radius: 0;
+       width: 20px;
+       margin-right: 5px;
+}
+
+/* gap between the icons and color of icon*/
+.old-comment .acomment-action span{
+    margin-right: 20px;
+    color: #5a5a5a;
+}
+
+
+.old-comment .acomment-action a{
+    columns: #0000ff;
+}
+
+
+
+
+/*   Secon page or video play page (player-video.html) view in mobile phone layout designe      */
+
+@media (max-width:900px){
+      .play-video{
+          flex-basis: 100%;
+      }
+
+      .right-sidebar{
+          flex-basis: 100%;
+      }
+
+      .play-container{
+          padding-left: 5%;
+      }
+
+      .vid-description{
+          padding-left: 0;
+      }
+
+      .play-video .play-video-info a{
+          margin-left: 0;
+          margin-right: 15px;
+          margin-top: 15px;
+      }
+
+
+}
